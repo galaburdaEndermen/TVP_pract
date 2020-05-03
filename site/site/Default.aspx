@@ -15,11 +15,11 @@
 
                 <div class ="face face1">
                     <div class="content">
-                        <img src="pictures\test.png" />
+                        <img src="pictures\test3.jpg" />
                         <h3>TEST</h3>
                     </div>
                 </div>
-                <div class ="face faces">
+                <div class ="face face2">
                      <div class="content">
                         <p>testing test just for test, you know, test is realy important</p>
                          <a href="#">LINK</a>
@@ -34,11 +34,11 @@
 
                 <div class ="face face1">
                     <div class="content">
-                        <img src="pictures\test.png" />
+                        <img src="pictures\test3.jpg" />
                         <h3>TEST</h3>
                     </div>
                 </div>
-                <div class ="face faces">
+                <div class ="face face2">
                      <div class="content">
                         <p>testing test just for test, you know, test is realy important</p>
                          <a href="#">LINK</a>
@@ -53,11 +53,11 @@
 
                 <div class ="face face1">
                     <div class="content">
-                        <img src="pictures\test.png" />
+                        <img src="pictures\test3.jpg" />
                         <h3>TEST</h3>
                     </div>
                 </div>
-                <div class ="face faces">
+                <div class ="face face2">
                      <div class="content">
                         <p>testing test just for test, you know, test is realy important</p>
                          <a href="#">LINK</a>
