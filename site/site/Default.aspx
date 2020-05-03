@@ -10,8 +10,33 @@
 </head>
 <body>
     <%--<div class="blur">--%>
-
     <form id="form1" runat="server">
+
+        <asp:Repeater ID="Repeater1" runat="server">
+      <ItemTemplate>
+          
+          <div class="card">
+
+                <div class ="face face1">
+                    <div class="content">
+                        <img src="pictures\test3.jpg" />
+                       <%-- <h3>TEST</h3>--%>
+                    </div>
+                </div>
+                <div class ="face face2">
+                     <div class="content">
+                        <p>testing test just for test, you know, test is realy important</p>
+                         <a href="#">LINK</a>
+                    </div>
+                </div>
+            
+             </div>
+            
+             </div>
+      </ItemTemplate>
+</asp:Repeater>
+
+
         <div class="container">
             <div class="card">
 
