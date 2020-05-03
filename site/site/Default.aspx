@@ -16,7 +16,7 @@
                 <div class ="face face1">
                     <div class="content">
                         <img src="pictures\test3.jpg" />
-                        <h3>TEST</h3>
+                       <%-- <h3>TEST</h3>--%>
                     </div>
                 </div>
                 <div class ="face face2">
@@ -35,7 +35,7 @@
                 <div class ="face face1">
                     <div class="content">
                         <img src="pictures\test3.jpg" />
-                        <h3>TEST</h3>
+                        <%--<h3>TEST</h3>--%>
                     </div>
                 </div>
                 <div class ="face face2">
@@ -54,7 +54,7 @@
                 <div class ="face face1">
                     <div class="content">
                         <img src="pictures\test3.jpg" />
-                        <h3>TEST</h3>
+                        <%--<h3>TEST</h3>--%>
                     </div>
                 </div>
                 <div class ="face face2">
