@@ -11,15 +11,15 @@
 <body id="bod">
     <form id="form1" runat="server">
 
-
-        <div class="container" id="container" runat="server">
-
-
-     
+         
+        <div class="top"></div>
 
 
-          
-        </div>
+
+
+
+
+        <div id="maindiv" runat="server" > </div>
 
     </form>
 </body>

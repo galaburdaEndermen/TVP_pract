@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.HtmlControls;
@@ -10,6 +11,39 @@ namespace site
 {
     public partial class Default : System.Web.UI.Page
     {
+        public Default()
+        {
+            this.PreRenderComplete += Default_PreLoad;
+        }
+
+        private void Default_PreLoad(object sender, EventArgs e)
+        {
+
+            HtmlGenericControl maindiv = (HtmlGenericControl)(FindControlRecursive(Page, "maindiv"));
+
+            HtmlGenericControl container = new HtmlGenericControl("div");
+            container.Attributes["class"] = "container";
+
+            container.Controls.Add(MakeNewHoverCard(@"pictures\test3.jpg", "testing test just for test, you know, test is realy important"));
+            container.Controls.Add(MakeNewHoverCard(@"pictures\test3.jpg", "testing test just for test, you know, test is realy important"));
+            container.Controls.Add(MakeNewHoverCard(@"pictures\test3.jpg", "testing test just for test, you know, test is realy important"));
+
+
+
+            HtmlGenericControl container2 = new HtmlGenericControl("div");
+            container2.Attributes["class"] = "container";
+
+            container2.Controls.Add(MakeNewHoverCard(@"pictures\test3.jpg", "testing test just for test, you know, test is realy important"));
+            container2.Controls.Add(MakeNewHoverCard(@"pictures\test3.jpg", "testing test just for test, you know, test is realy important"));
+            container2.Controls.Add(MakeNewHoverCard(@"pictures\test3.jpg", "testing test just for test, you know, test is realy important"));
+
+
+
+
+            maindiv.Controls.Add(container);
+            maindiv.Controls.Add(container2);
+
+        }
 
         private Control FindControlRecursive(Control rootControl, string controlID)
         {
@@ -70,14 +104,56 @@ namespace site
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+            
+            //HtmlGenericControl maindiv = (HtmlGenericControl)(FindControlRecursive(Page, "maindiv"));
 
-            HtmlGenericControl maincontainer = (HtmlGenericControl)(FindControlRecursive(Page, "container"));
-            maincontainer.Controls.Add(MakeNewHoverCard(@"pictures\test3.jpg", "testing test just for test, you know, test is realy important"));
+            //HtmlGenericControl container = new HtmlGenericControl("div");
+            //container.Attributes["class"] = "container";
+
+            //container.Controls.Add(MakeNewHoverCard(@"pictures\test3.jpg", "testing test just for test, you know, test is realy important"));
+            //container.Controls.Add(MakeNewHoverCard(@"pictures\test3.jpg", "testing test just for test, you know, test is realy important"));
+            //container.Controls.Add(MakeNewHoverCard(@"pictures\test3.jpg", "testing test just for test, you know, test is realy important"));
 
 
-        //https://issue.life/questions/36741781
-        //https://progi.pro/aspnet-htmlgenericcontrol-div-obnovit-10253159
-        //https://docs.microsoft.com/en-us/dotnet/api/system.web.ui.page.findcontrol?view=netframework-4.8
+
+            //HtmlGenericControl container2 = new HtmlGenericControl("div");
+            //container2.Attributes["class"] = "container";
+
+            //container2.Controls.Add(MakeNewHoverCard(@"pictures\test3.jpg", "testing test just for test, you know, test is realy important"));
+            //container2.Controls.Add(MakeNewHoverCard(@"pictures\test3.jpg", "testing test just for test, you know, test is realy important"));
+            //container2.Controls.Add(MakeNewHoverCard(@"pictures\test3.jpg", "testing test just for test, you know, test is realy important"));
+
+
+
+
+            //maindiv.Controls.Add(container);
+            //maindiv.Controls.Add(container2);
+           
+
+
+
+
+            //HtmlGenericControl maindiv = (HtmlGenericControl)(FindControlRecursive(Page, "maindiv"));
+            //maindiv.Controls.Add(MakeNewHoverCard(@"pictures\test3.jpg", "testing test just for test, you know, test is realy important"));
+            //maindiv.Controls.Add(MakeNewHoverCard(@"pictures\test3.jpg", "testing test just for test, you know, test is realy important"));
+            //maindiv.Controls.Add(MakeNewHoverCard(@"pictures\test3.jpg", "testing test just for test, you know, test is realy important"));
+            //maindiv.Controls.Add(MakeNewHoverCard(@"pictures\test3.jpg", "testing test just for test, you know, test is realy important"));
+            //maindiv.Controls.Add(MakeNewHoverCard(@"pictures\test3.jpg", "testing test just for test, you know, test is realy important"));
+            //maindiv.Controls.Add(MakeNewHoverCard(@"pictures\test3.jpg", "testing test just for test, you know, test is realy important"));
+            //maindiv.Controls.Add(MakeNewHoverCard(@"pictures\test3.jpg", "testing test just for test, you know, test is realy important"));
+            //maindiv.Controls.Add(MakeNewHoverCard(@"pictures\test3.jpg", "testing test just for test, you know, test is realy important"));
+
+
+
+
+
+            //maincontainer.Controls.Add(MakeNewHoverCard(@"pictures\test3.jpg", "testing test just for test, you know, test is realy important"));//поладить баг з багатьма ховерами
+
+
+            //https://issue.life/questions/36741781
+            //https://progi.pro/aspnet-htmlgenericcontrol-div-obnovit-10253159
+            //https://docs.microsoft.com/en-us/dotnet/api/system.web.ui.page.findcontrol?view=netframework-4.8
         }
     }
 }
