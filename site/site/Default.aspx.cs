@@ -24,23 +24,21 @@ namespace site
 
         }
 
-
-        protected void Page_Load(object sender, EventArgs e)
+        private Control MakeNewHoverCard(string pictureUrl, string description)
         {
-            HtmlGenericControl testCard = new HtmlGenericControl("div"); // сама карточка для теста, чи добавиться вона на сторінку 
-            testCard.Attributes["class"] = "card";
+            HtmlGenericControl newCard = new HtmlGenericControl("div"); // сама карточка для теста, чи добавиться вона на сторінку 
+            newCard.Attributes["class"] = "card";
 
             HtmlGenericControl face1 = new HtmlGenericControl("div");
             face1.Attributes["class"] = "face face1";
             HtmlGenericControl face1Content = new HtmlGenericControl("div");
             face1Content.Attributes["class"] = "content";
 
-            //HtmlGenericControl face1Img = new HtmlGenericControl("img");
-            //face1Img.Attributes["src"] = "pictures\test3.jpg";
+
             Image face1Img = new Image();
             face1Img.ID = "img";
-            face1Img.ImageUrl = @"pictures\test3.jpg";
- 
+            face1Img.ImageUrl = @pictureUrl;
+
 
             face1Content.Controls.Add(face1Img);
             face1.Controls.Add(face1Content);
@@ -52,29 +50,29 @@ namespace site
             HtmlGenericControl face2Content = new HtmlGenericControl("div");
             face2Content.Attributes["class"] = "content";
             HtmlGenericControl face2Text = new HtmlGenericControl("p");
-            face2Text.InnerText = "testing test just for test, you know, test is realy important";
+            face2Text.InnerText = description;
             HtmlGenericControl face2Link = new HtmlGenericControl("a");
             face2Link.Attributes["href"] = "#";
-            face2Link.InnerText = "LINK";
+            face2Link.InnerText = "Дізнатись більше";
 
             face2Content.Controls.Add(face2Text);
             face2Content.Controls.Add(face2Link);
             face2.Controls.Add(face2Content);
 
 
-            testCard.Controls.Add(face1);
-            testCard.Controls.Add(face2);
+            newCard.Controls.Add(face1);
+            newCard.Controls.Add(face2);
+
+            return newCard;
+
+        }
 
 
-            //var sas = Page.FindControl("kek");
-            
-            var sas = FindControlRecursive(Page, "kek");
+        protected void Page_Load(object sender, EventArgs e)
+        {
 
-
-            HtmlGenericControl maincontainer = (HtmlGenericControl)sas;
-            maincontainer.Controls.Add(testCard);
-        //maincontainer.Controls.Add()
-
+            HtmlGenericControl maincontainer = (HtmlGenericControl)(FindControlRecursive(Page, "container"));
+            maincontainer.Controls.Add(MakeNewHoverCard(@"pictures\test3.jpg", "testing test just for test, you know, test is realy important"));
 
 
         //https://issue.life/questions/36741781
