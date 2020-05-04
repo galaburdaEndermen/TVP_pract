@@ -12,7 +12,12 @@
     <form id="form1" runat="server">
 
          
-        <div class="top"></div>
+        <div class="top">
+            <div class="top-text">
+                <h1>Картинна галерея</h1>
+                <p>Картини великих художників, живопис майстрів минулого та сучасності з кращих музеїв світу.</p>
+            </div>
+        </div>
 
 
 
@@ -21,6 +26,14 @@
 
         <div id="maindiv" runat="server" > </div>
 
+
+
+        <div class="bot">
+            <div class="bot-text">
+                <p>cas</p>
+            </div>
+        </div>
+
     </form>
-</body>
+</body>s
 </html>

@@ -21,9 +21,49 @@ body {
     align-items: center;
     font-family: Consolas;
 }
-.top
+.top {
+    /*height: 600px;*/
+    height: 88vh; /*возможні баги через різні розрешенія*/
+    /*padding: 3em 0;*/
+    position: relative;
+}
+.top-text {
+    background-color: rgba(250,250,250, 0.4); /* Black w/opacity/see-through */
+    color: black;
+    font-weight: bold;
+    border: 3px solid #f1f1f1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 80%;
+    height: 20%;
+    padding: 20px;
+    text-align: center;
+}
+.bot {
+    /*height: 600px;*/
+    height: 40vh; /*возможні баги через різні розрешенія*/
+    /*width: 100vw;*/
+    /*padding: 3em 0;*/
+    position: relative;
+    
+}
+.bot-text
 {
-    height: 900px;
+    background-color: rgba(0,0,0, 0.4); 
+    color: black;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 100vw;
+    height: 20%;
+    /*padding: 20px;*/
+    text-align: center;
 }
 .container
 {
