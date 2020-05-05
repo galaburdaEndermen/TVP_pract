@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
+using site.Extentions;
 using site.Models;
 
 namespace site
@@ -152,10 +154,24 @@ namespace site
             HtmlGenericControl face1Img = new HtmlGenericControl("img");
 
 
-            //src = "data:image/jpg;base64, [your byte array]"
-            string src = "data:image/" + pic.FileName.Substring(pic.FileName.IndexOf('.')) + ";base64, " + Convert.ToBase64String(pic.ImageData);
-            face1Content.Attributes["src"] = src;
 
+            //string fileType = pic.FileName.Substring(pic.FileName.IndexOf('.')).Filtre(' ');
+            //string src = "data:image/" + fileType + ";base64," + Convert.ToBase64String(pic.ImageData);
+            //face1Content.Attributes["src"] = src;
+
+            
+            try
+            {
+                using (System.IO.FileStream fs = new System.IO.FileStream(@"F:\" + pic.FileName, FileMode.OpenOrCreate))
+                {
+                    fs.Write(pic.ImageData, 0, pic.ImageData.Length);
+                }
+            }
+            catch (Exception e)
+            {
+
+               
+            }
 
             //Image face1Img = new Image();
             //face1Img.ID = "img";

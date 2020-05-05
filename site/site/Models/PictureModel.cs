@@ -17,8 +17,20 @@ namespace site.Models
 
         public int id;
         public byte[] ImageData;
-        public string FileName;
+
+        public string fileName;
+        public string FileName 
+        {
+            get
+            {
+                return id.ToString() + fileName;
+            }
+            set
+            {
+                fileName = value;
+            }
+        }
+
         public string Description;
     }
-}
 }
