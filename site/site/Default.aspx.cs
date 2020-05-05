@@ -36,10 +36,11 @@ namespace site
                 {
                     int id = reader.GetInt32(0);
                     string filename = reader.GetString(1);
-                    string title = reader.GetString(2);
-                    byte[] data = (byte[])reader.GetValue(3);
+                    string picturename = reader.GetString(2);
+                    string desc = reader.GetString(3);
+                    byte[] data = (byte[])reader.GetValue(4);
 
-                    PictureModel image = new PictureModel(id, data, filename, title);
+                    PictureModel image = new PictureModel(id, data, filename, picturename, desc);
                     images.Add(image);
                 }
             }
@@ -142,7 +143,7 @@ namespace site
 
         private Control MakeNewHoverCard(PictureModel pic)
         {
-            HtmlGenericControl newCard = new HtmlGenericControl("div"); // сама карточка для теста, чи добавиться вона на сторінку 
+            HtmlGenericControl newCard = new HtmlGenericControl("div");
             newCard.Attributes["class"] = "card";
 
             HtmlGenericControl face1 = new HtmlGenericControl("div");
@@ -151,7 +152,7 @@ namespace site
             face1Content.Attributes["class"] = "content";
 
 
-            HtmlGenericControl face1Img = new HtmlGenericControl("img");
+            //HtmlGenericControl face1Img = new HtmlGenericControl("img");
 
 
 
@@ -173,9 +174,9 @@ namespace site
                
             }
 
-            //Image face1Img = new Image();
-            //face1Img.ID = "img";
-            //face1Img.ImageUrl = @pictureUrl;
+            Image face1Img = new Image();
+            face1Img.ID = "img";
+            face1Img.ImageUrl = @"F:\" + pic.FileName;
 
 
             face1Content.Controls.Add(face1Img);

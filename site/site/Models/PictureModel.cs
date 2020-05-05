@@ -7,11 +7,12 @@ namespace site.Models
 {
     public class PictureModel
     {
-        public PictureModel(int id, byte[] ImageData, string FileName, string Description)
+        public PictureModel(int id, byte[] ImageData, string FileName, string PictureName, string Description)
         {
             this.id = id;
             this.ImageData = ImageData;
             this.FileName = FileName;
+            this.PictureName = PictureName;
             this.Description = Description;
         }
 
@@ -31,6 +32,7 @@ namespace site.Models
             }
         }
 
+        public string PictureName;
         public string Description;
     }
 }

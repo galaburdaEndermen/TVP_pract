@@ -21,7 +21,6 @@ namespace DBfiller
 
         private static byte[] imageData;
         private static string shortFileName;
-        private static string description;
         private void button1_Click(object sender, EventArgs e)
         {
             if (openFileDialog1.ShowDialog() == DialogResult.Cancel)
@@ -39,15 +38,7 @@ namespace DBfiller
                 fs.Read(imageData, 0, imageData.Length);
             }
 
-            description = pictureNameTB.Text;
 
-            //string data = "";
-            //foreach (byte item in imageData)
-            //{
-            //    data += item;
-            //}
-            //var sas = Convert.ToBase64String(imageData);
-            //MessageBox.Show(Convert.ToBase64String(imageData));
         }
 
         private const string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + "\"" + @"C:\Users\Anton\Desktop\практика веб\proj\TVP_pract\site\site\App_Data\Database1.mdf" + "\"" + @";Integrated Security=True";
@@ -58,19 +49,26 @@ namespace DBfiller
                 connection.Open();
                 SqlCommand command = new SqlCommand();
                 command.Connection = connection;
-                command.CommandText = @"INSERT INTO Images VALUES (@FileName, @FileDesc, @Image)";
+                command.CommandText = @"INSERT INTO Images VALUES (@FileName, @PictureName, @FileDesc, @Image)";
                 command.Parameters.Add("@FileName", SqlDbType.NVarChar, 50);
+                command.Parameters.Add("@PictureName", SqlDbType.NVarChar, 50);
                 command.Parameters.Add("@FileDesc", SqlDbType.NVarChar, 50);
                 command.Parameters.Add("@Image", SqlDbType.Image, 1000000);
 
                
                 // передаем данные в команду через параметры
                 command.Parameters["@FileName"].Value = shortFileName;
-                command.Parameters["@FileDesc"].Value = description;
+                command.Parameters["@PictureName"].Value = pictureNameTB.Text;
+                command.Parameters["@FileDesc"].Value = pictureDescTB.Text;
                 command.Parameters["@Image"].Value = imageData;
 
                 command.ExecuteNonQuery();
             }
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
