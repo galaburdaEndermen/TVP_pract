@@ -19,18 +19,13 @@
             </div>
         </div>
 
-
-
-
-
-
         <div id="maindiv" runat="server" > </div>
-
-
 
         <div class="bot">
             <div class="bot-text">
-                <p>cas</p>
+               
+                <a href="#">Зворотній зв'язок</a>
+                 <p>Сайт Галабурди Антона</p>
             </div>
         </div>
 

@@ -104,7 +104,6 @@
             this.label3.Size = new System.Drawing.Size(77, 13);
             this.label3.TabIndex = 6;
             this.label3.Text = "Опис картини";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // pictureNameTB
             // 

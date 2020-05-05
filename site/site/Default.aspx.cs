@@ -17,8 +17,35 @@ namespace site
     {
         public Default()
         {
-            this.PreLoad += Default_PreLoad;
+            //this.PreLoad += Default_PreLoad;
+            this.PreLoad += Nout_PreLoad;
         }
+        private void Nout_PreLoad(object sender, EventArgs e)//для ноута, бо там нема бд
+        {
+            HtmlGenericControl container = new HtmlGenericControl("div");
+            container.Attributes["class"] = "container";
+
+            container.Controls.Add(MakeNewHoverCard(@"pictures\test3.jpg", "testing test just for test, you know, test is realy important"));
+            container.Controls.Add(MakeNewHoverCard(@"pictures\test3.jpg", "testing test just for test, you know, test is realy important"));
+            container.Controls.Add(MakeNewHoverCard(@"pictures\test3.jpg", "testing test just for test, you know, test is realy important"));
+
+
+
+            HtmlGenericControl container2 = new HtmlGenericControl("div");
+            container2.Attributes["class"] = "container";
+
+            container2.Controls.Add(MakeNewHoverCard(@"pictures\test3.jpg", "testing test just for test, you know, test is realy important"));
+            container2.Controls.Add(MakeNewHoverCard(@"pictures\test3.jpg", "testing test just for test, you know, test is realy important"));
+            container2.Controls.Add(MakeNewHoverCard(@"pictures\test3.jpg", "testing test just for test, you know, test is realy important"));
+
+
+
+
+            maindiv.Controls.Add(container);
+            maindiv.Controls.Add(container2);
+        }
+
+
 
 
         private const string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + "\"" + @"C:\Users\Anton\Desktop\практика веб\proj\TVP_pract\site\site\App_Data\Database1.mdf" + "\"" + @";Integrated Security=True";
@@ -48,41 +75,16 @@ namespace site
 
             HtmlGenericControl maindiv = (HtmlGenericControl)(FindControlRecursive(Page, "maindiv"));
 
-            for (int i = 0; i < images.Count; i+= 3)
+            for (int i = 0; i < images.Count; i += 3)
             {
                 HtmlGenericControl container = new HtmlGenericControl("div");
                 container.Attributes["class"] = "container";
 
                 container.Controls.Add(MakeNewHoverCard(images[i]));
-                container.Controls.Add(MakeNewHoverCard(images[i+1]));
-                container.Controls.Add(MakeNewHoverCard(images[i+2]));
+                container.Controls.Add(MakeNewHoverCard(images[i + 1]));
+                container.Controls.Add(MakeNewHoverCard(images[i + 2]));
                 maindiv.Controls.Add(container);
             }
-
-
-
-            //HtmlGenericControl container = new HtmlGenericControl("div");
-            //container.Attributes["class"] = "container";
-
-            //container.Controls.Add(MakeNewHoverCard(@"pictures\test3.jpg", "testing test just for test, you know, test is realy important"));
-            //container.Controls.Add(MakeNewHoverCard(@"pictures\test3.jpg", "testing test just for test, you know, test is realy important"));
-            //container.Controls.Add(MakeNewHoverCard(@"pictures\test3.jpg", "testing test just for test, you know, test is realy important"));
-
-
-
-            //HtmlGenericControl container2 = new HtmlGenericControl("div");
-            //container2.Attributes["class"] = "container";
-
-            //container2.Controls.Add(MakeNewHoverCard(@"pictures\test3.jpg", "testing test just for test, you know, test is realy important"));
-            //container2.Controls.Add(MakeNewHoverCard(@"pictures\test3.jpg", "testing test just for test, you know, test is realy important"));
-            //container2.Controls.Add(MakeNewHoverCard(@"pictures\test3.jpg", "testing test just for test, you know, test is realy important"));
-
-
-
-
-            //maindiv.Controls.Add(container);
-            //maindiv.Controls.Add(container2);
-
         }
 
         private Control FindControlRecursive(Control rootControl, string controlID)
@@ -150,17 +152,6 @@ namespace site
             face1.Attributes["class"] = "face face1";
             HtmlGenericControl face1Content = new HtmlGenericControl("div");
             face1Content.Attributes["class"] = "content";
-
-
-            //HtmlGenericControl face1Img = new HtmlGenericControl("img");
-
-
-
-            //string fileType = pic.FileName.Substring(pic.FileName.IndexOf('.')).Filtre(' ');
-            //string src = "data:image/" + fileType + ";base64," + Convert.ToBase64String(pic.ImageData);
-            //face1Content.Attributes["src"] = src;
-
-            
             try
             {
                 using (System.IO.FileStream fs = new System.IO.FileStream(@"C:\Users\Anton\Desktop\практика веб\proj\TVP_pract\site\site\pictures\" + pic.FileName, FileMode.OpenOrCreate))
@@ -171,7 +162,7 @@ namespace site
             catch (Exception e)
             {
 
-               
+
             }
 
             Image face1Img = new Image();
@@ -210,56 +201,7 @@ namespace site
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-            
-            //HtmlGenericControl maindiv = (HtmlGenericControl)(FindControlRecursive(Page, "maindiv"));
 
-            //HtmlGenericControl container = new HtmlGenericControl("div");
-            //container.Attributes["class"] = "container";
-
-            //container.Controls.Add(MakeNewHoverCard(@"pictures\test3.jpg", "testing test just for test, you know, test is realy important"));
-            //container.Controls.Add(MakeNewHoverCard(@"pictures\test3.jpg", "testing test just for test, you know, test is realy important"));
-            //container.Controls.Add(MakeNewHoverCard(@"pictures\test3.jpg", "testing test just for test, you know, test is realy important"));
-
-
-
-            //HtmlGenericControl container2 = new HtmlGenericControl("div");
-            //container2.Attributes["class"] = "container";
-
-            //container2.Controls.Add(MakeNewHoverCard(@"pictures\test3.jpg", "testing test just for test, you know, test is realy important"));
-            //container2.Controls.Add(MakeNewHoverCard(@"pictures\test3.jpg", "testing test just for test, you know, test is realy important"));
-            //container2.Controls.Add(MakeNewHoverCard(@"pictures\test3.jpg", "testing test just for test, you know, test is realy important"));
-
-
-
-
-            //maindiv.Controls.Add(container);
-            //maindiv.Controls.Add(container2);
-           
-
-
-
-
-            //HtmlGenericControl maindiv = (HtmlGenericControl)(FindControlRecursive(Page, "maindiv"));
-            //maindiv.Controls.Add(MakeNewHoverCard(@"pictures\test3.jpg", "testing test just for test, you know, test is realy important"));
-            //maindiv.Controls.Add(MakeNewHoverCard(@"pictures\test3.jpg", "testing test just for test, you know, test is realy important"));
-            //maindiv.Controls.Add(MakeNewHoverCard(@"pictures\test3.jpg", "testing test just for test, you know, test is realy important"));
-            //maindiv.Controls.Add(MakeNewHoverCard(@"pictures\test3.jpg", "testing test just for test, you know, test is realy important"));
-            //maindiv.Controls.Add(MakeNewHoverCard(@"pictures\test3.jpg", "testing test just for test, you know, test is realy important"));
-            //maindiv.Controls.Add(MakeNewHoverCard(@"pictures\test3.jpg", "testing test just for test, you know, test is realy important"));
-            //maindiv.Controls.Add(MakeNewHoverCard(@"pictures\test3.jpg", "testing test just for test, you know, test is realy important"));
-            //maindiv.Controls.Add(MakeNewHoverCard(@"pictures\test3.jpg", "testing test just for test, you know, test is realy important"));
-
-
-
-
-
-            //maincontainer.Controls.Add(MakeNewHoverCard(@"pictures\test3.jpg", "testing test just for test, you know, test is realy important"));//поладить баг з багатьма ховерами
-
-
-            //https://issue.life/questions/36741781
-            //https://progi.pro/aspnet-htmlgenericcontrol-div-obnovit-10253159
-            //https://docs.microsoft.com/en-us/dotnet/api/system.web.ui.page.findcontrol?view=netframework-4.8
         }
     }
 }
