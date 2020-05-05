@@ -41,12 +41,13 @@ namespace DBfiller
 
             description = pictureNameTB.Text;
 
-            string data = "";
-            foreach (byte item in imageData)
-            {
-                data += item;
-            }
-            MessageBox.Show(data);
+            //string data = "";
+            //foreach (byte item in imageData)
+            //{
+            //    data += item;
+            //}
+            //var sas = Convert.ToBase64String(imageData);
+            //MessageBox.Show(Convert.ToBase64String(imageData));
         }
 
         private const string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + "\"" + @"C:\Users\Anton\Desktop\практика веб\proj\TVP_pract\site\site\App_Data\Database1.mdf" + "\"" + @";Integrated Security=True";

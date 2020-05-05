@@ -152,7 +152,9 @@ namespace site
             HtmlGenericControl face1Img = new HtmlGenericControl("img");
 
 
-            face1Content.Attributes["src"] = "content";//тута зробить
+            //src = "data:image/jpg;base64, [your byte array]"
+            string src = "data:image/" + pic.FileName.Substring(pic.FileName.IndexOf('.')) + ";base64, " + Convert.ToBase64String(pic.ImageData);
+            face1Content.Attributes["src"] = src;
 
 
             //Image face1Img = new Image();
