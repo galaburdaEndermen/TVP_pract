@@ -163,7 +163,7 @@ namespace site
             
             try
             {
-                using (System.IO.FileStream fs = new System.IO.FileStream(@"F:\" + pic.FileName, FileMode.OpenOrCreate))
+                using (System.IO.FileStream fs = new System.IO.FileStream(@"C:\Users\Anton\Desktop\практика веб\proj\TVP_pract\site\site\pictures\" + pic.FileName, FileMode.OpenOrCreate))
                 {
                     fs.Write(pic.ImageData, 0, pic.ImageData.Length);
                 }
@@ -176,7 +176,7 @@ namespace site
 
             Image face1Img = new Image();
             face1Img.ID = "img";
-            face1Img.ImageUrl = @"F:\" + pic.FileName;
+            face1Img.ImageUrl = @"pictures\" + pic.FileName;
 
 
             face1Content.Controls.Add(face1Img);
@@ -190,6 +190,7 @@ namespace site
             face2Content.Attributes["class"] = "content";
             HtmlGenericControl face2Text = new HtmlGenericControl("p");
             face2Text.InnerText = pic.Description;
+            //face2Text.InnerText = "testing test just for test, you know, test is realy important";
             HtmlGenericControl face2Link = new HtmlGenericControl("a");
             face2Link.Attributes["href"] = "#";
             face2Link.InnerText = "Дізнатись більше";

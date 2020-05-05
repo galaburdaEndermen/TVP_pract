@@ -1,4 +1,5 @@
-﻿using System;
+﻿using site.Extentions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -24,7 +25,7 @@ namespace site.Models
         {
             get
             {
-                return id.ToString() + fileName;
+                return (id.ToString() + fileName).Filtre(' ');
             }
             set
             {

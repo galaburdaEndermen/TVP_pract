@@ -21,6 +21,10 @@ body {
     align-items: center;
     font-family: Consolas;
 }
+.mainform
+{
+    width: 100vw;
+}
 .top {
     /*height: 600px;*/
     height: 88vh; /*возможні баги через різні розрешенія*/
@@ -44,7 +48,11 @@ body {
 }
 .bot {
     /*height: 600px;*/
-    height: 40vh; /*возможні баги через різні розрешенія*/
+    /*height: 10vh;*/ /*возможні баги через різні розрешенія*/
+
+    height: 50px;
+    width: 100%;
+
     /*width: 100vw;*/
     /*padding: 3em 0;*/
     position: relative;
@@ -52,7 +60,7 @@ body {
 }
 .bot-text
 {
-    background-color: rgba(0,0,0, 0.4); 
+    background-color: black;
     color: black;
     font-weight: bold;
     position: absolute;
@@ -60,8 +68,9 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
-    width: 100vw;
-    height: 20%;
+    /*width: 98vw;*/
+    width: 115%;
+    height: 100%;
     /*padding: 20px;*/
     text-align: center;
 }
