@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "site", "site\site.csproj", "{222DAB46-676B-4A67-92D0-FA9E3A4C0495}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBfiller", "DBfiller\DBfiller.csproj", "{2311FAA5-DB72-449C-BD9E-421D4AA794B9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{222DAB46-676B-4A67-92D0-FA9E3A4C0495}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{222DAB46-676B-4A67-92D0-FA9E3A4C0495}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{222DAB46-676B-4A67-92D0-FA9E3A4C0495}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2311FAA5-DB72-449C-BD9E-421D4AA794B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2311FAA5-DB72-449C-BD9E-421D4AA794B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2311FAA5-DB72-449C-BD9E-421D4AA794B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2311FAA5-DB72-449C-BD9E-421D4AA794B9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
