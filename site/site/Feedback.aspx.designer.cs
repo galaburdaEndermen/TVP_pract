@@ -51,6 +51,15 @@ namespace site
         protected global::System.Web.UI.WebControls.TextBox Email;
 
         /// <summary>
+        /// Password элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox Password;
+
+        /// <summary>
         /// Text элемент управления.
         /// </summary>
         /// <remarks>

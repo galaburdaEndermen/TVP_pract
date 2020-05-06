@@ -89,13 +89,11 @@ body
     /*width: 1000px;*/
     width: 75vw;
     position: relative;
-    display: flex;
 
     /*justify-content: space-between;*/ 
 
-    text-align:center;
     display: flex;
-  flex-wrap: wrap;
+    flex-wrap: wrap;
     
 }
 .container .card
