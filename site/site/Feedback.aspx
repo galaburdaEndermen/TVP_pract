@@ -30,9 +30,6 @@
             <p>Ваша електронна пошта</p>
             <asp:TextBox runat="server" ID="Email" CssClass="text-box"></asp:TextBox>
             
-            <p>Ваш пароль</p>
-            <asp:TextBox runat="server" ID="Password" TextMode="Password" CssClass="text-box"></asp:TextBox>
-
             </div>
 
 
