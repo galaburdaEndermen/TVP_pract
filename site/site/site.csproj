@@ -75,6 +75,7 @@
     <Content Include="Feedback.aspx" />
     <Content Include="styles\mainPage.css" />
     <Content Include="styles\feedbackPage.css" />
+    <Content Include="styles\galeryPage.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

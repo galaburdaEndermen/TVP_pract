@@ -17,8 +17,8 @@ namespace site
     {
         public Default()
         {
-            this.PreLoad += Default_PreLoad;
-            //this.PreLoad += Nout_PreLoad;
+            //this.PreLoad += Default_PreLoad;
+            this.PreLoad += Nout_PreLoad;
         }
         private void Nout_PreLoad(object sender, EventArgs e)//для ноута, бо там нема бд
         {
