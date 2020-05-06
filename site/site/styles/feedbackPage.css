@@ -80,6 +80,7 @@
 }
 .mainform
 {
+    padding-top: 20px;
     background: white;
     box-shadow: 0 20px 50px rgba(0,0,0,0.8);
     /*width: 1000px;*/
@@ -89,7 +90,7 @@
     margin-top: 25px;
     margin-bottom: 75px;
 
-    position: relative;
+    /*position: relative;*/
 }
 .text-box
 {
@@ -126,6 +127,7 @@
     margin-right: 1px;
 
     display: inline-block;
+
     text-decoration: none;
     font-weight: 900;
     color: black;
@@ -134,13 +136,37 @@
     float: right;
 
     
-    position: absolute;
+    /*position: absolute;
     bottom: 0;
-    right: 0;
+    right: 0;*/
 }
 
-.butn:hover 
-{
+
+
+.butn:hover {
     background: black;
     color: white;
+}
+
+.letter-wrapper
+{
+    width: 100%;
+    overflow: auto;
+    height: 50%;
+    margin-right: 5%;
+    margin-left: 5%;
+    width: 90%;
+    border: 1px solid black;
+}
+
+.credentials-wrapper
+{
+    /*margin-right: 5%;*/
+    width: 100%;
+    overflow: auto;
+    height: 30%;
+}
+.mainform p
+{
+    margin-left: 5%;
 }

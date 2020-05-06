@@ -9,6 +9,7 @@
     <title></title>
 </head>
 <body>
+    <%--http://jsfiddle.net/Lg7d3Lz8/5/--%>
     <form id="form1" runat="server">
 
         <div class="top">
@@ -18,6 +19,8 @@
 
         <div class="mainform">
 
+            <div class="credentials-wrapper">
+                
             <p>Ваше ім'я</p>
             <asp:TextBox runat="server" ID="Name" CssClass="text-box"></asp:TextBox>
             
@@ -29,12 +32,24 @@
             
             <p>Ваш пароль</p>
             <asp:TextBox runat="server" ID="Password" TextMode="Password" CssClass="text-box"></asp:TextBox>
+
+            </div>
+
+
+<%--            <p>Ваше ім'я</p>
+            <asp:TextBox runat="server" ID="Name" CssClass="text-box"></asp:TextBox>
+            
+            <p>Тема листа</p>
+            <asp:TextBox runat="server" ID="Subject" CssClass="text-box"></asp:TextBox>
+            
+            <p>Ваша електронна пошта</p>
+            <asp:TextBox runat="server" ID="Email" CssClass="text-box"></asp:TextBox>
+            
+            <p>Ваш пароль</p>
+            <asp:TextBox runat="server" ID="Password" TextMode="Password" CssClass="text-box"></asp:TextBox>--%>
             
              <p>Ваш лист</p>
-            <div style="width: 100%;
-                overflow: auto; height: 30%; margin-right: 5%;
-    margin-left: 5%; width: 90%; 
-    border: 1px solid black;">
+            <div class="letter-wrapper">
                 
             <asp:TextBox runat="server" ID="Text" CssClass="letter-box"></asp:TextBox>
             </div>
