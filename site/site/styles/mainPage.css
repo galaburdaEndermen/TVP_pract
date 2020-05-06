@@ -86,8 +86,8 @@ body
 }
 .container
 {
-    /*width: 1000px;*/
-    width: 75vw;
+    width: 1000px;
+    /*width: 75vw;*/
     position: relative;
     display: flex;
     justify-content: space-between; 
