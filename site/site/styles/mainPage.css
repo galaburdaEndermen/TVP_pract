@@ -86,21 +86,33 @@ body
 }
 .container
 {
-    width: 1000px;
-    /*width: 75vw;*/
+    /*width: 1000px;*/
+    width: 75vw;
     position: relative;
     display: flex;
-    justify-content: space-between; 
+
+    /*justify-content: space-between;*/ 
+
+    text-align:center;
+    display: flex;
+  flex-wrap: wrap;
+    
 }
 .container .card
 {
     position: relative;
+    margin: 0 auto;
+    /*width: 400px;*/
+    /*float: left;*/
+    /*white-space: nowrap;*/
+    /*display: inline-block;*/
 }
 .container .card .face
 { 
     width: 320px;
     height: 180px;
     transition: 0.5s;
+
 }
 .container .card .face.face1
 {
@@ -112,6 +124,7 @@ body
     z-index: 1;
 
     transform: translateY(90px);
+
 }
 .container .card:hover .face.face1
 {
