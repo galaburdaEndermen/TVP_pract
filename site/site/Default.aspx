@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <link rel ="stylesheet" href="styles/hover.css" />
+    <link rel ="stylesheet" href="styles/mainPage.css" />
     <title></title>
 </head>
 <body id="bod">
@@ -24,7 +24,7 @@
         <div class="bot">
             <div class="bot-text">
                
-                <a href="#">Зворотній зв'язок</a>
+                <a href="Feedback.aspx">Зворотній зв'язок</a>
                  <p>Сайт Галабурди Антона</p>
             </div>
         </div>

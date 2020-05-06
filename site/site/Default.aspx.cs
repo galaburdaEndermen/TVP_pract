@@ -17,8 +17,8 @@ namespace site
     {
         public Default()
         {
-            //this.PreLoad += Default_PreLoad;
-            this.PreLoad += Nout_PreLoad;
+            this.PreLoad += Default_PreLoad;
+            //this.PreLoad += Nout_PreLoad;
         }
         private void Nout_PreLoad(object sender, EventArgs e)//для ноута, бо там нема бд
         {
@@ -180,7 +180,7 @@ namespace site
             HtmlGenericControl face2Content = new HtmlGenericControl("div");
             face2Content.Attributes["class"] = "content";
             HtmlGenericControl face2Text = new HtmlGenericControl("p");
-            face2Text.InnerText = pic.Description;
+            face2Text.InnerText = pic.PictureName;
             //face2Text.InnerText = "testing test just for test, you know, test is realy important";
             HtmlGenericControl face2Link = new HtmlGenericControl("a");
             face2Link.Attributes["href"] = "#";
