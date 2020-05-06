@@ -17,7 +17,11 @@
         </div>
 
         <div class="mainform">
+            <asp:TextBox runat="server" ID="Name"></asp:TextBox>
+            <asp:TextBox runat="server" ID="Subject"></asp:TextBox>
+            <asp:TextBox runat="server" ID="Email"></asp:TextBox>
 
+            <asp:TextBox runat="server" ID="Text"></asp:TextBox>
         </div>
 
       <div class="bot">
