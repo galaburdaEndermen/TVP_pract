@@ -73,6 +73,7 @@
     </Content>
     <Content Include="Default.aspx" />
     <Content Include="Feedback.aspx" />
+    <Content Include="Gallery.aspx" />
     <Content Include="styles\mainPage.css" />
     <Content Include="styles\feedbackPage.css" />
     <Content Include="styles\galeryPage.css" />
@@ -93,6 +94,13 @@
     </Compile>
     <Compile Include="Feedback.aspx.designer.cs">
       <DependentUpon>Feedback.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery.aspx.cs">
+      <DependentUpon>Gallery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gallery.aspx.designer.cs">
+      <DependentUpon>Gallery.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\PictureModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

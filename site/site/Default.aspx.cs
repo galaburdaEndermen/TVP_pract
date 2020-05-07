@@ -17,8 +17,8 @@ namespace site
     {
         public Default()
         {
-            //this.PreLoad += Default_PreLoad;
-            this.PreLoad += Nout_PreLoad;
+            this.PreLoad += Default_PreLoad;
+            //this.PreLoad += Nout_PreLoad;
         }
         private void Nout_PreLoad(object sender, EventArgs e)//для ноута, бо там нема бд
         {
@@ -75,16 +75,26 @@ namespace site
 
             HtmlGenericControl maindiv = (HtmlGenericControl)(FindControlRecursive(Page, "maindiv"));
 
-            for (int i = 0; i < images.Count; i += 3)
-            {
-                HtmlGenericControl container = new HtmlGenericControl("div");
-                container.Attributes["class"] = "container";
+            HtmlGenericControl container = new HtmlGenericControl("div");
+            container.Attributes["class"] = "container";
 
-                container.Controls.Add(MakeNewHoverCard(images[i]));
-                container.Controls.Add(MakeNewHoverCard(images[i + 1]));
-                container.Controls.Add(MakeNewHoverCard(images[i + 2]));
-                maindiv.Controls.Add(container);
+            foreach (PictureModel item in images)
+            {
+                container.Controls.Add(MakeNewHoverCard(item));
             }
+            maindiv.Controls.Add(container);
+
+
+            //for (int i = 0; i < images.Count; i += 3)
+            //{
+            //    HtmlGenericControl container = new HtmlGenericControl("div");
+            //    container.Attributes["class"] = "container";
+
+            //    container.Controls.Add(MakeNewHoverCard(images[i]));
+            //    container.Controls.Add(MakeNewHoverCard(images[i + 1]));
+            //    container.Controls.Add(MakeNewHoverCard(images[i + 2]));
+            //    maindiv.Controls.Add(container);
+            //}
         }
 
         private Control FindControlRecursive(Control rootControl, string controlID)
@@ -183,7 +193,8 @@ namespace site
             face2Text.InnerText = pic.PictureName;
             //face2Text.InnerText = "testing test just for test, you know, test is realy important";
             HtmlGenericControl face2Link = new HtmlGenericControl("a");
-            face2Link.Attributes["href"] = "#";
+            face2Link.Attributes["href"] = "Gallery.aspx?Picture=" + pic.PictureName;
+            //"Default1.aspx?Login=" + Login.Text + "&Password=" + Password.Text //приклад
             face2Link.InnerText = "Дізнатись більше";
 
             face2Content.Controls.Add(face2Text);
