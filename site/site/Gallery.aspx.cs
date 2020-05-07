@@ -22,42 +22,85 @@ namespace site
             {
                 //тут реалізувать загрузку бд і показ картінки
 
-                List<PictureModel> images = new List<PictureModel>();
+                List<int> ids = new List<int>();
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
                     //string sql = "SELECT * FROM Images WHERE PictureName = ’" + Request.QueryString["Picture"].ToString() +  "’";
-                    string sql = "SELECT * FROM Images WHERE PictureName = @PictureName";
+                    //string sql = "SELECT * FROM Images WHERE Id = @id";
+                    string sql = "SELECT Id FROM Images ORDER BY Id";
                     SqlCommand command = new SqlCommand(sql, connection);
-                    command.Parameters.Add("@PictureName", SqlDbType.NVarChar, 50).Value = Request.QueryString["Picture"].ToString();
+                    //command.Parameters.Add("@id", SqlDbType.NVarChar, 50).Value = Request.QueryString["Picture"].ToString();
                     SqlDataReader reader = command.ExecuteReader();
 
                     while (reader.Read())
                     {
                         int id = reader.GetInt32(0);
-                        string filename = reader.GetString(1);
-                        string picturename = reader.GetString(2);
-                        string desc = reader.GetString(3);
-                        byte[] data = (byte[])reader.GetValue(4);
+                        //string filename = reader.GetString(1);
+                        //string picturename = reader.GetString(2);
+                        //string desc = reader.GetString(3);
+                        //byte[] data = (byte[])reader.GetValue(4);
 
-                        PictureModel image = new PictureModel(id, data, filename, picturename, desc);
-                        images.Add(image);
+                        //PictureModel image = new PictureModel(id, data, filename, picturename, desc);
+                        ids.Add(id);
                     }
+                    reader.Close();
+
+                    int currentId = int.Parse(Request.QueryString["Picture"].ToString());
+
+                    int leftId = 0;
+                    if (currentId != ids[0])
+                    {
+                        leftId = ids[ids.IndexOf(currentId) - 1];
+                    }
+                    else
+                    {
+                        leftId = currentId;
+                    }
+
+                    int rightId = 0;
+                    if (currentId != ids[ids.Count - 1])
+                    {
+                        rightId = ids[ids.IndexOf(currentId) + 1];
+                    }
+                    else
+                    {
+                        rightId = currentId;
+                    }
+
+                    //получаю відкритий
+                    string currentSql = "SELECT * FROM Images WHERE Id = @id";
+                    SqlCommand currentCommand = new SqlCommand(currentSql, connection);
+                    currentCommand.Parameters.Add("@id", SqlDbType.NVarChar, 50).Value = currentId;
+                    SqlDataReader currentReader = currentCommand.ExecuteReader();
+
+
+                    PictureModel image = null;
+                    while (currentReader.Read())
+                    {
+                        int id = currentReader.GetInt32(0);
+                        string filename = currentReader.GetString(1);
+                        string picturename = currentReader.GetString(2);
+                        string desc = currentReader.GetString(3);
+                        byte[] data = (byte[])currentReader.GetValue(4);
+
+                        image = new PictureModel(id, data, filename, picturename, desc);
+                    }
+                    //
 
                     HtmlGenericControl maindiv = (HtmlGenericControl)(FindControlRecursive(Page, "maindiv"));
 
                     HtmlGenericControl container = new HtmlGenericControl("div");
-                    HtmlGenericControl container = new HtmlGenericControl("div");
                     container.Attributes["class"] = "container";
 
-                    foreach (PictureModel item in images)
-                    {
-                        container.Controls.Add(MakeNewHoverCard(item));
-                    }
-                    maindiv.Controls.Add(container);
+                   
+                    container.Controls.Add(MakeNewHoverCard(image));
                     
+                    maindiv.Controls.Add(container);
 
 
+
+                    //розпихать їх по місцям
                 }
 
             }
