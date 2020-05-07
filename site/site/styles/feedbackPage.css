@@ -85,7 +85,7 @@
     box-shadow: 0 20px 50px rgba(0,0,0,0.8);
     /*width: 1000px;*/
     width: 75vw;
-    height: 100vh;
+    height: 800px;
 
     margin-top: 25px;
     margin-bottom: 75px;
@@ -96,16 +96,18 @@
 {
     margin-right: 15%;
     margin-left: 5%;
-    width: 45%;
+    width: 40%;
 }
 .letter-box
 {
     
-    width: 100%;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
 
-    border: 0px solid black;
+    /*border: 0px solid black;*/
 
-    height: 100%;
+    height: 55%;
 
      /*position: absolute;*/
 
@@ -118,25 +120,29 @@
 }
 
 .butn {
-    background: white;
+    
     /*margin: 15px 15px 0;*/
 
-    margin-top: 1px;
+    /*margin-top: 1px;
     margin-bottom: 1px;
     margin-left: 1px;
-    margin-right: 1px;
+    margin-right: 1px;*/
 
-    display: inline-block;
-
+    
+    background: white;
     text-decoration: none;
     font-weight: 900;
     color: black;
     padding: 5px;
     border: 1px solid black;
-    float: right;
 
+    width: 100%;
     
-    /*position: absolute;
+    
+    /*float: right;
+    display: inline-block;
+    
+    position: absolute;
     bottom: 0;
     right: 0;*/
 }
@@ -150,13 +156,13 @@
 
 .letter-wrapper
 {
-    width: 100%;
-    overflow: auto;
-    height: 50%;
-    margin-right: 5%;
-    margin-left: 5%;
-    width: 90%;
-    border: 1px solid black;
+    width: 100px;
+
+    margin-top: 30px;
+    height: 50px;
+    margin-right: auto;
+    margin-left: auto;
+
 }
 
 .credentials-wrapper

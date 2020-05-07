@@ -34,7 +34,7 @@ namespace site
 
         protected void Unnamed_Click(object sender, EventArgs e)
         {
-            SendEmailAsync().GetAwaiter();
+            //SendEmailAsync().GetAwaiter();
 
             //try
             //{

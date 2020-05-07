@@ -19,8 +19,7 @@
 
         <div class="mainform">
 
-            <div class="credentials-wrapper">
-                
+           
             <p>Ваше ім'я</p>
             <asp:TextBox runat="server" ID="Name" CssClass="text-box"></asp:TextBox>
             
@@ -30,17 +29,18 @@
             <p>Ваша електронна пошта</p>
             <asp:TextBox runat="server" ID="Email" CssClass="text-box"></asp:TextBox>
             
-            </div>
+    
 
 
              <p>Ваш лист</p>
-            <div class="letter-wrapper">
-                
+           
             <asp:TextBox runat="server" ID="Text" CssClass="letter-box"></asp:TextBox>
+
+
+            <div class="letter-wrapper">
+                  <asp:Button runat="server" OnClick="Unnamed_Click" CssClass="butn" Text="Надіслати"/>
             </div>
-
-
-            <asp:Button runat="server" OnClick="Unnamed_Click" CssClass="butn" Text="Надіслати"/>
+          
             
         </div>
 
