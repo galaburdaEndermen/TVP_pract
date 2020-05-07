@@ -33,27 +33,12 @@
             </div>
 
 
-<%--            <p>Ваше ім'я</p>
-            <asp:TextBox runat="server" ID="Name" CssClass="text-box"></asp:TextBox>
-            
-            <p>Тема листа</p>
-            <asp:TextBox runat="server" ID="Subject" CssClass="text-box"></asp:TextBox>
-            
-            <p>Ваша електронна пошта</p>
-            <asp:TextBox runat="server" ID="Email" CssClass="text-box"></asp:TextBox>
-            
-            <p>Ваш пароль</p>
-            <asp:TextBox runat="server" ID="Password" TextMode="Password" CssClass="text-box"></asp:TextBox>--%>
-            
              <p>Ваш лист</p>
             <div class="letter-wrapper">
                 
             <asp:TextBox runat="server" ID="Text" CssClass="letter-box"></asp:TextBox>
             </div>
 
-          <%--  <p>Ваш лист</p>
-            <asp:TextBox runat="server" ID="Text" CssClass="letter-box"></asp:TextBox>
-           --%>
 
             <asp:Button runat="server" OnClick="Unnamed_Click" CssClass="butn" Text="Надіслати"/>
             
