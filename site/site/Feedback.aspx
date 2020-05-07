@@ -37,7 +37,7 @@
             <asp:TextBox runat="server" ID="Text" CssClass="letter-box"></asp:TextBox>
 
 
-            <div class="letter-wrapper">
+            <div class="btn-box">
                   <asp:Button runat="server" OnClick="Unnamed_Click" CssClass="butn" Text="Надіслати"/>
             </div>
           

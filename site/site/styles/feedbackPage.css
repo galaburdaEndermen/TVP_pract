@@ -23,7 +23,6 @@
 
     margin-top: 25px;
 
-    /*width: 1000px;*/
     height: 100px;
 }
 
@@ -83,14 +82,14 @@
     padding-top: 20px;
     background: white;
     box-shadow: 0 20px 50px rgba(0,0,0,0.8);
-    /*width: 1000px;*/
+
     width: 75vw;
     height: 800px;
 
     margin-top: 25px;
     margin-bottom: 75px;
 
-    /*position: relative;*/
+
 }
 .text-box
 {
@@ -105,28 +104,18 @@
     margin-left: 5%;
     margin-right: 5%;
 
-    /*border: 0px solid black;*/
+
 
     height: 55%;
 
-     /*position: absolute;*/
-
-     /*overflow: scroll;*/
-     
 }
 .letter-box:focus
 {
    border: 0px solid black;
 }
 
-.butn {
-    
-    /*margin: 15px 15px 0;*/
-
-    /*margin-top: 1px;
-    margin-bottom: 1px;
-    margin-left: 1px;
-    margin-right: 1px;*/
+.butn 
+{
 
     
     background: white;
@@ -138,23 +127,14 @@
 
     width: 100%;
     
-    
-    /*float: right;
-    display: inline-block;
-    
-    position: absolute;
-    bottom: 0;
-    right: 0;*/
+
 }
-
-
-
 .butn:hover {
     background: black;
     color: white;
 }
 
-.letter-wrapper
+.btn-box
 {
     width: 100px;
 
@@ -163,14 +143,6 @@
     margin-right: auto;
     margin-left: auto;
 
-}
-
-.credentials-wrapper
-{
-    /*margin-right: 5%;*/
-    width: 100%;
-    overflow: auto;
-    height: 30%;
 }
 .mainform p
 {
