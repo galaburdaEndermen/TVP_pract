@@ -117,7 +117,7 @@ namespace site
                     HtmlGenericControl maindiv = (HtmlGenericControl)(FindControlRecursive(Page, "maindiv"));
                     HtmlGenericControl article = new HtmlGenericControl("div");
                     article.Attributes["class"] = "article";
-                    article.InnerHtml = "<h3>ТУТ ЗАГОЛОВОК</h3>\n<p>Тут сам текст</p>";
+                    article.InnerHtml = "<h3>ТУТ ЗАГОЛОВОК</h3>\n<p>Тут сам текст Тут сам текст Тут сам текст Тут сам текст Тут сам текст Тут сам текст Тут сам текст Тут сам текст Тут сам текст Тут сам текст Тут сам текст Тут сам текст Тут сам текст Тут сам текст Тут сам текст Тут сам текст Тут сам текст Тут сам текст Тут сам текст Тут сам текст Тут сам текст Тут сам текстТут сам текст Тут сам текст Тут сам текст Тут сам текст </p>";
 
                     maindiv.Controls.Add(article);
 
