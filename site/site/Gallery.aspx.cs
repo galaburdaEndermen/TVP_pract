@@ -109,8 +109,17 @@ namespace site
                     right.Attributes["href"] = "Gallery.aspx?Picture=" + rightId;
                     right.Attributes["class"] = "right";
 
-                    imagediv.Controls.Add(left);
-                    imagediv.Controls.Add(right);
+                    if (leftId != currentId)
+                    {
+                        imagediv.Controls.Add(left);
+                    }
+                    if (rightId != currentId)
+                    {
+                        imagediv.Controls.Add(right);
+                    }
+
+                    
+                   
 
 
 
