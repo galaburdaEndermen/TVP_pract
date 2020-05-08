@@ -88,15 +88,49 @@ namespace site
                     }
                     //
 
+                    //HtmlGenericControl mainImg = (HtmlGenericControl)(FindControlRecursive(Page, "mainImg"));
+                    //mainImg.Attributes["src"] = @"pictures\" + image.FileName;
+
+
+                    Image mainImg = new Image();
+                    mainImg.ID = "img";
+                    mainImg.ImageUrl = @"pictures\" + image.FileName;
+                    mainImg.CssClass = "picture";
+
+
+                    HtmlGenericControl imagediv = (HtmlGenericControl)(FindControlRecursive(Page, "image"));
+                    imagediv.Controls.Add(mainImg);
+
+                    HtmlGenericControl left = new HtmlGenericControl("a");
+                    left.Attributes["href"] = "Gallery.aspx?Picture=" + leftId;
+                    left.Attributes["class"] = "left";
+                    left.InnerText = "fff";
+                    HtmlGenericControl right = new HtmlGenericControl("a");
+                    right.Attributes["href"] = "Gallery.aspx?Picture=" + rightId;
+                    right.Attributes["class"] = "right";
+
+                    imagediv.Controls.Add(left);
+                    imagediv.Controls.Add(right);
+
+
+
                     HtmlGenericControl maindiv = (HtmlGenericControl)(FindControlRecursive(Page, "maindiv"));
+                    HtmlGenericControl article = new HtmlGenericControl("div");
+                    article.Attributes["class"] = "article";
+                    article.InnerHtml = "<h3>ТУТ ЗАГОЛОВОК</h3>\n<p>Тут сам текст</p>";
 
-                    HtmlGenericControl container = new HtmlGenericControl("div");
-                    container.Attributes["class"] = "container";
+                    maindiv.Controls.Add(article);
 
-                   
-                    container.Controls.Add(MakeNewHoverCard(image));
-                    
-                    maindiv.Controls.Add(container);
+
+
+
+                    //HtmlGenericControl container = new HtmlGenericControl("div");
+                    //container.Attributes["class"] = "container";
+
+
+                    //container.Controls.Add(MakeNewHoverCard(image));
+
+                    //maindiv.Controls.Add(container);
 
 
 
@@ -111,61 +145,61 @@ namespace site
         }
 
 
-        private Control MakeNewHoverCard(PictureModel pic)
-        {
-            HtmlGenericControl newCard = new HtmlGenericControl("div");
-            newCard.Attributes["class"] = "card";
+        //private Control MakeNewHoverCard(PictureModel pic)
+        //{
+        //    HtmlGenericControl newCard = new HtmlGenericControl("div");
+        //    newCard.Attributes["class"] = "card";
 
-            HtmlGenericControl face1 = new HtmlGenericControl("div");
-            face1.Attributes["class"] = "face face1";
-            HtmlGenericControl face1Content = new HtmlGenericControl("div");
-            face1Content.Attributes["class"] = "content";
-            try
-            {
-                using (System.IO.FileStream fs = new System.IO.FileStream(@"C:\Users\Anton\Desktop\практика веб\proj\TVP_pract\site\site\pictures\" + pic.FileName, FileMode.OpenOrCreate))
-                {
-                    fs.Write(pic.ImageData, 0, pic.ImageData.Length);
-                }
-            }
-            catch (Exception e)
-            {
-
-
-            }
-
-            Image face1Img = new Image();
-            face1Img.ID = "img";
-            face1Img.ImageUrl = @"pictures\" + pic.FileName;
+        //    HtmlGenericControl face1 = new HtmlGenericControl("div");
+        //    face1.Attributes["class"] = "face face1";
+        //    HtmlGenericControl face1Content = new HtmlGenericControl("div");
+        //    face1Content.Attributes["class"] = "content";
+        //    try
+        //    {
+        //        using (System.IO.FileStream fs = new System.IO.FileStream(@"C:\Users\Anton\Desktop\практика веб\proj\TVP_pract\site\site\pictures\" + pic.FileName, FileMode.OpenOrCreate))
+        //        {
+        //            fs.Write(pic.ImageData, 0, pic.ImageData.Length);
+        //        }
+        //    }
+        //    catch (Exception e)
+        //    {
 
 
-            face1Content.Controls.Add(face1Img);
-            face1.Controls.Add(face1Content);
+        //    }
+
+        //    Image face1Img = new Image();
+        //    face1Img.ID = "img";
+        //    face1Img.ImageUrl = @"pictures\" + pic.FileName;
+
+
+        //    face1Content.Controls.Add(face1Img);
+        //    face1.Controls.Add(face1Content);
 
 
 
-            HtmlGenericControl face2 = new HtmlGenericControl("div");
-            face2.Attributes["class"] = "face face2";
-            HtmlGenericControl face2Content = new HtmlGenericControl("div");
-            face2Content.Attributes["class"] = "content";
-            HtmlGenericControl face2Text = new HtmlGenericControl("p");
-            face2Text.InnerText = pic.PictureName;
-            //face2Text.InnerText = "testing test just for test, you know, test is realy important";
-            HtmlGenericControl face2Link = new HtmlGenericControl("a");
-            face2Link.Attributes["href"] = "Gallery.aspx?Picture=" + pic.PictureName;
-            //"Default1.aspx?Login=" + Login.Text + "&Password=" + Password.Text //приклад
-            face2Link.InnerText = "Дізнатись більше";
+        //    HtmlGenericControl face2 = new HtmlGenericControl("div");
+        //    face2.Attributes["class"] = "face face2";
+        //    HtmlGenericControl face2Content = new HtmlGenericControl("div");
+        //    face2Content.Attributes["class"] = "content";
+        //    HtmlGenericControl face2Text = new HtmlGenericControl("p");
+        //    face2Text.InnerText = pic.PictureName;
+        //    //face2Text.InnerText = "testing test just for test, you know, test is realy important";
+        //    HtmlGenericControl face2Link = new HtmlGenericControl("a");
+        //    face2Link.Attributes["href"] = "Gallery.aspx?Picture=" + pic.PictureName;
+        //    //"Default1.aspx?Login=" + Login.Text + "&Password=" + Password.Text //приклад
+        //    face2Link.InnerText = "Дізнатись більше";
 
-            face2Content.Controls.Add(face2Text);
-            face2Content.Controls.Add(face2Link);
-            face2.Controls.Add(face2Content);
+        //    face2Content.Controls.Add(face2Text);
+        //    face2Content.Controls.Add(face2Link);
+        //    face2.Controls.Add(face2Content);
 
 
-            newCard.Controls.Add(face1);
-            newCard.Controls.Add(face2);
+        //    newCard.Controls.Add(face1);
+        //    newCard.Controls.Add(face2);
 
-            return newCard;
+        //    return newCard;
 
-        }
+        //}
 
         private Control FindControlRecursive(Control rootControl, string controlID)
         {
