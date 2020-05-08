@@ -104,7 +104,7 @@ namespace site
                     HtmlGenericControl left = new HtmlGenericControl("a");
                     left.Attributes["href"] = "Gallery.aspx?Picture=" + leftId;
                     left.Attributes["class"] = "left";
-                    left.InnerText = "fff";
+                    //left.InnerText = "fff";
                     HtmlGenericControl right = new HtmlGenericControl("a");
                     right.Attributes["href"] = "Gallery.aspx?Picture=" + rightId;
                     right.Attributes["class"] = "right";

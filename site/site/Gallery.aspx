@@ -16,7 +16,7 @@
 
         <div id="maindiv" runat="server" style="width:75vw; ">
 
-         <div id="image" runat="server" style="text-align: center; margin-top: 40px; position:relative;">
+         <div id="image" runat="server" class="tmp">
              <%--<a class="left" runat="server"></a>
              <a class="right" runat="server"></a>--%>
          </div>
