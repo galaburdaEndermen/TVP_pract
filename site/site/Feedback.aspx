@@ -34,7 +34,7 @@
 
              <p>Ваш лист</p>
            
-            <asp:TextBox runat="server" ID="Text" CssClass="letter-box"></asp:TextBox>
+            <asp:TextBox runat="server" ID="Text" CssClass="letter-box" TextMode="MultiLine"></asp:TextBox>
 
 
             <div class="btn-box">

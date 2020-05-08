@@ -72,11 +72,13 @@
       <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
     <Content Include="Default.aspx" />
+    <Content Include="Error.aspx" />
     <Content Include="Feedback.aspx" />
     <Content Include="Gallery.aspx" />
     <Content Include="styles\mainPage.css" />
     <Content Include="styles\feedbackPage.css" />
     <Content Include="styles\galeryPage.css" />
+    <Content Include="styles\errorPage.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -86,6 +88,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
     </Compile>
     <Compile Include="Extentions.cs" />
     <Compile Include="Feedback.aspx.cs">
