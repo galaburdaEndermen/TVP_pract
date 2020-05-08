@@ -31,7 +31,7 @@
         <div class="bot">
             <div class="bot-text">
                
-                <a href="Feedback.aspx">Зворотній зв'язок</a>
+                <a href="Default.aspx">Головна сторінка</a>
                  <p>Сайт Галабурди Антона</p>
             </div>
         </div>

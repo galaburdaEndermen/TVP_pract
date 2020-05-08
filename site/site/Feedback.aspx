@@ -46,7 +46,9 @@
 
       <div class="bot">
             <div class="bot-text">
+                <a href="Default.aspx">Головна сторінка</a>
                  <p>Сайт Галабурди Антона</p>
+
             </div>
         </div>
     </form>
