@@ -46,7 +46,16 @@ namespace site
                     }
                     reader.Close();
 
+
+                    var sas = Request.QueryString["Picture"].ToString();
                     int currentId = int.Parse(Request.QueryString["Picture"].ToString());
+
+
+                    if (!ids.Contains(currentId))
+                    {
+                        Response.Redirect("Error.aspx");
+                    }
+
 
                     int leftId = 0;
                     if (currentId != ids[0])
@@ -149,7 +158,7 @@ namespace site
             }
             else
             {
-                //тут чо робить, єслі нема такого
+                Response.Redirect("Error.aspx");
             }
         }
 
