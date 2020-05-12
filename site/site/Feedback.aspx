@@ -19,6 +19,16 @@
 
         <div class="mainform">
 
+            <p>Автор сайту: студент 31-ІП групи ГАлабурда Антон Сергійович</p>
+            <div style="margin-left: 5%">
+             <ul>
+                <li>Закінчив Зорянський НВК "школа-гімназія"</li>
+                <li>Навчаюсь в ВСП РК НУБІП України</li>
+                
+            </ul>
+
+            </div>
+           
            
             <p>Ваше ім'я</p>
             <asp:TextBox runat="server" ID="Name" CssClass="text-box"></asp:TextBox>

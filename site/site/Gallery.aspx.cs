@@ -20,28 +20,17 @@ namespace site
         {
             if (Request.QueryString["Picture"] != null)
             {
-                //тут реалізувать загрузку бд і показ картінки
-
                 List<int> ids = new List<int>();
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    //string sql = "SELECT * FROM Images WHERE PictureName = ’" + Request.QueryString["Picture"].ToString() +  "’";
-                    //string sql = "SELECT * FROM Images WHERE Id = @id";
                     string sql = "SELECT Id FROM Images ORDER BY Id";
                     SqlCommand command = new SqlCommand(sql, connection);
-                    //command.Parameters.Add("@id", SqlDbType.NVarChar, 50).Value = Request.QueryString["Picture"].ToString();
                     SqlDataReader reader = command.ExecuteReader();
 
                     while (reader.Read())
                     {
                         int id = reader.GetInt32(0);
-                        //string filename = reader.GetString(1);
-                        //string picturename = reader.GetString(2);
-                        //string desc = reader.GetString(3);
-                        //byte[] data = (byte[])reader.GetValue(4);
-
-                        //PictureModel image = new PictureModel(id, data, filename, picturename, desc);
                         ids.Add(id);
                     }
                     reader.Close();
@@ -97,8 +86,6 @@ namespace site
                     }
                     //
 
-                    //HtmlGenericControl mainImg = (HtmlGenericControl)(FindControlRecursive(Page, "mainImg"));
-                    //mainImg.Attributes["src"] = @"pictures\" + image.FileName;
 
 
                     Image mainImg = new Image();
@@ -113,7 +100,6 @@ namespace site
                     HtmlGenericControl left = new HtmlGenericControl("a");
                     left.Attributes["href"] = "Gallery.aspx?Picture=" + leftId;
                     left.Attributes["class"] = "left";
-                    //left.InnerText = "fff";
                     HtmlGenericControl right = new HtmlGenericControl("a");
                     right.Attributes["href"] = "Gallery.aspx?Picture=" + rightId;
                     right.Attributes["class"] = "right";
@@ -135,24 +121,10 @@ namespace site
                     HtmlGenericControl maindiv = (HtmlGenericControl)(FindControlRecursive(Page, "maindiv"));
                     HtmlGenericControl article = new HtmlGenericControl("div");
                     article.Attributes["class"] = "article";
-                    article.InnerHtml = "<h3>ТУТ ЗАГОЛОВОК</h3>\n<p>Тут сам текст Тут сам текст Тут сам текст Тут сам текст Тут сам текст Тут сам текст Тут сам текст Тут сам текст Тут сам текст Тут сам текст Тут сам текст Тут сам текст Тут сам текст Тут сам текст Тут сам текст Тут сам текст Тут сам текст Тут сам текст Тут сам текст Тут сам текст Тут сам текст Тут сам текстТут сам текст Тут сам текст Тут сам текст Тут сам текст </p>";
+                    article.InnerHtml = String.Format("<h3>{0}</h3>\n<p>{1}</p>", image.PictureName, image.Description);
 
                     maindiv.Controls.Add(article);
 
-
-
-
-                    //HtmlGenericControl container = new HtmlGenericControl("div");
-                    //container.Attributes["class"] = "container";
-
-
-                    //container.Controls.Add(MakeNewHoverCard(image));
-
-                    //maindiv.Controls.Add(container);
-
-
-
-                    //розпихать їх по місцям
                 }
 
             }

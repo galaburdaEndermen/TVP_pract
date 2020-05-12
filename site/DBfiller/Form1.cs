@@ -52,8 +52,8 @@ namespace DBfiller
                 command.CommandText = @"INSERT INTO Images VALUES (@FileName, @PictureName, @FileDesc, @Image)";
                 command.Parameters.Add("@FileName", SqlDbType.NVarChar, 50);
                 command.Parameters.Add("@PictureName", SqlDbType.NVarChar, 50);
-                command.Parameters.Add("@FileDesc", SqlDbType.NVarChar, 50);
-                command.Parameters.Add("@Image", SqlDbType.Image, 1000000);
+                command.Parameters.Add("@FileDesc", SqlDbType.NVarChar, 1000);
+                command.Parameters.Add("@Image", SqlDbType.Image, 10000000);
 
                
                 // передаем данные в команду через параметры
